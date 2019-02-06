@@ -34,7 +34,9 @@ class ProjectsController extends Controller
    }
 
    public function edit($id){
-      //
+
+      $project = Project::find($id);
+      return view('projects.edit', $project);
    }
 
    public function update(Request $request, $id){
