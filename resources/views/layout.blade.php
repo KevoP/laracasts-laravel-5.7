@@ -9,13 +9,15 @@
     <body>
             
         <nav>
-            <ul>
+            <ul class="container">
                 <li><a href="/">home</a></li>
                 <li><a href="/contact">contact</a></li>
                 <li><a href="/about">about</a></li>
             </ul>
         </nav>
 
-        @yield('content')
+        <main class="container">
+            @yield('content')
+        </main>
     </body>
 </html>
