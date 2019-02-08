@@ -16,16 +16,19 @@ class ProjectsController extends Controller
    }
 
    public function create(){
+      $guarded = [];
       return view('projects.create');
    }
 
    public function show(Project $project){
-      //
+      return view('projects.show', compact('project'));
    }
 
    public function store(Request $request)
    {
-      Project::create(request(['title', 'description']));
+      Project::create(request(
+         ['title', 'description']
+      ));
 
       return redirect('/projects');
    }
@@ -35,11 +38,7 @@ class ProjectsController extends Controller
    }
 
    public function update(Project $project){
-      $project->title = request('title');
-      $project->description = request('description');
-
-      $project->save();
-
+      $project->update(request(['title', 'description']));
       return redirect('/projects');
    }
 

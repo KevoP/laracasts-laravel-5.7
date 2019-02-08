@@ -7,14 +7,45 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     </head>
     <body>
-            
-        <nav>
-            <ul class="container">
-                <li><a href="/">home</a></li>
-                <li><a href="/contact">contact</a></li>
-                <li><a href="/about">about</a></li>
-            </ul>
-        </nav>
+        <div class="container">   
+
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+              <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                  
+                    <a href="/" class="navbar-item">
+                        Home
+                    </a>
+
+                    <a href="/projects" class="navbar-item">
+                        Projects
+                    </a>
+
+                    <a href="/contact" class="navbar-item">
+                        Contact
+                    </a>
+
+                    <a href="/about" class="navbar-item">
+                        About
+                    </a>                    
+
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-primary">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a class="button is-light">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </nav>
+        </div>
 
         <main class="container">
             @yield('content')
