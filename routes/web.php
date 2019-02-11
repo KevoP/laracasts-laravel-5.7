@@ -22,3 +22,8 @@ Route::get('/about',  'PagesController@about');
  * Projects Routes
  */
 Route::resource('projects', 'ProjectsController');
+
+/**
+ * Tasks 
+ */
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
