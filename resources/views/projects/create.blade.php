@@ -22,4 +22,6 @@
          <button class="button is-submit" type="submit">Create Project</button>
       </form>
 
+      @include('errors')
+
 @endsection
