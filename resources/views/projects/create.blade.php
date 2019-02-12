@@ -9,17 +9,19 @@
 
          <div class="field">
             <div class="control">
-               <input class="input" type="text" name="title" placeholder="Project Title">
+               <input class="input" type="text" name="title" placeholder="Project Title" required>
             </div>
          </div>
          
          <div class="field">
             <div class="control">
-               <textarea class="textarea" name="description" placeholder="Project Description"></textarea>
+               <textarea class="textarea" name="description" placeholder="Project Description" required></textarea>
             </div>
          </div>
          
          <button class="button is-submit" type="submit">Create Project</button>
       </form>
+
+      @include('errors')
 
 @endsection
