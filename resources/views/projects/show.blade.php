@@ -2,12 +2,15 @@
 
 @section('content')
 
-      <h1>{{ $project->title }}</h1>
+    <h1 class="title">{{ $project->title }}</h1>
 
-      <div>
-         {{ $project->description }}
-      </div>
+    <div class="content">
+        
+        <div>
+            {{ $project->description }}
+        </div>
 
-      <a href="/projects/{{ $project->id }}/edit" class="button is-info">Edit</a>
+        <a href="/projects/{{ $project->id }}/edit" class="button is-info">Edit</a>
 
+    </div>
 @endsection      
