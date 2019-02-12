@@ -36,4 +36,6 @@
 
       </div>
 
+      @include('errors')
+
 @endsection
