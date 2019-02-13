@@ -59,4 +59,5 @@
 
       @include('errors')
 
+    </div>
 @endsection      

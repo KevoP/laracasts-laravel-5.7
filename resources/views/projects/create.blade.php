@@ -2,25 +2,39 @@
 
 @section('content')
 
-      <h1>Create a Project</h1>
+      <h1 class="title">Create a Project</h1>
 
-      <form action="/projects" method="POST">
-         {{ csrf_field() }}
+      <div class="content">
+         
+         <form action="/projects" method="POST">
+            {{ csrf_field() }}
 
-         <div class="field">
-            <div class="control">
-               <input class="input" type="text" name="title" placeholder="Project Title" required>
+            <div class="field">
+               <div class="control">
+                  <input class="input {{ $errors->has('title') ? 'is-danger' : '' }}" type="text" name="title" placeholder="Project Title" value="{{ old('title') }}" required>
+               </div>
             </div>
-         </div>
-         
-         <div class="field">
-            <div class="control">
-               <textarea class="textarea" name="description" placeholder="Project Description" required></textarea>
+            
+            <div class="field">
+               <div class="control">
+                  <textarea class="textarea {{ $errors->has('description') ? 'is-danger' : '' }}" name="description" placeholder="Project Description" required>{{ old('description') }}</textarea>
+               </div>
             </div>
-         </div>
-         
-         <button class="button is-submit" type="submit">Create Project</button>
-      </form>
+            
+            <button class="button is-submit" type="submit">Create Project</button>
+         </form>
+
+         @if($errors->any())
+            <div class="notification is-danger">
+               <ul>
+                  @foreach($errors->all() as $error)
+                     <li>{{ $error }}</li>
+                  @endforeach
+               </ul>
+            </div>
+         @endif
+
+      </div>
 
       @include('errors')
 
