@@ -32,5 +32,7 @@
          <button class="button is-danger" type="submit">Delete</button>
       </form>
 
+      @include('errors')
+
    </div>
 @endsection

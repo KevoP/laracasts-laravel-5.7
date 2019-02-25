@@ -11,6 +11,31 @@
 |
 */
 
+// use App\Repositories\UserRepository;
+
+// Route::get('/', function(UserRepository $users){
+//     dd($users);
+//     return view('welcome');
+// });
+
+// use App\Services\Twitter;
+
+// Route::get('/', function(Twitter $twitter){
+//     dd($twitter);
+//     return view('welcome');
+// });
+
+// app()->singleton('example', function(){
+//     return new \App\Example;
+// });
+
+// Route::get('/', function(){
+//     dd(app('App\Example'));
+//     return view('welcome');
+// });
+
+
+
 /**
  * Pages Routes
  */
@@ -21,7 +46,8 @@ Route::get('/about',  'PagesController@about');
 /**
  * Projects Routes
  */
-Route::resource('projects', 'ProjectsController');
+Route::resource('projects', 'ProjectsController')
+    ->middleware('can:view,project');
 
 /**
  * Project Tasks
@@ -34,3 +60,15 @@ Route::post('/projects/{project}/task', 'ProjectTasksController@store');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
 Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

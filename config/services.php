@@ -40,4 +40,9 @@ return [
         ],
     ],
 
+    'twitter' => [
+        'key' => env('TWITTER_PUBLIC_KEY'),
+        'secret' => env('TWITTER_PRIVATE_KEY')
+    ],
+
 ];
