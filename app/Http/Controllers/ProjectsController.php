@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Events\ProjectPublished;
 
 class ProjectsController extends Controller
 {
@@ -39,7 +40,7 @@ class ProjectsController extends Controller
       ]);
 
       $validated['owner_id'] = auth()->id();
-      Project::create($validated);
+      $project = Project::create($validated);
 
       return redirect('/projects');
    }
