@@ -2,7 +2,12 @@
 
 @section('content')
       
+
       <h1 class="title">Projects</h1>
+
+      @if(session('message'))
+         <h2 class="is-success">{{ session('message') }}</h2>
+      @endif
 
       <div class="content">
          <ul>

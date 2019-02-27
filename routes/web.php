@@ -11,6 +11,8 @@
 |
 */
 
+use App\Notifications\SubscriptionRenewalFailed;
+
 // use App\Repositories\UserRepository;
 
 // Route::get('/', function(UserRepository $users){
@@ -61,13 +63,14 @@ Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
 Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 
-
-
-
-
-
-
-
+/**
+ * Notification Test
+ */
+Route::get('/notifications', function(){
+    $user = App\User::first();
+    $user->notify(new SubscriptionRenewalFailed);
+    return 'Done';
+});
 
 Auth::routes();
 

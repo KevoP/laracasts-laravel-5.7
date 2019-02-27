@@ -42,6 +42,8 @@ class ProjectsController extends Controller
       $validated['owner_id'] = auth()->id();
       $project = Project::create($validated);
 
+      $request->session()->flash('message', "$project->title - Project created Successfully");
+
       return redirect('/projects');
    }
 
